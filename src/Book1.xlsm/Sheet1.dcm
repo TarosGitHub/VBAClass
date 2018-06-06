@@ -1,0 +1,27 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "Sheet1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Option Explicit
+
+Public Sub ButtomClick()
+    Dim t_obj00 As Child00
+    Dim t_obj01 As Child01
+    Set t_obj00 = New Child00
+    Set t_obj01 = New Child01
+    
+    Hoge t_obj00.Parent()
+    Hoge t_obj01.Parent()
+    
+    Set t_obj00 = Nothing
+    Set t_obj01 = Nothing
+End Sub
+
+Private Sub Hoge(a_obj As Parent)
+    a_obj.FuncA
+End Sub
